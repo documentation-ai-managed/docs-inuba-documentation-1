@@ -1,0 +1,103 @@
+---
+title: Welcome to Inuba Documentation
+description: An overview of Inuba Documentation, a platform for organizing and managing project documentation spaces.
+---
+
+## Overview
+
+Inuba Documentation provides a centralized platform where you create, organize, and manage documentation spaces for your projects. You build comprehensive guides, API references, and tutorials using an intuitive MDX-based editor. This space scales with your needs, supporting teams and complex documentation workflows.
+
+<Callout kind="success">
+  Start creating your first documentation space in under 5 minutes.
+</Callout>
+
+## What is Inuba Documentation
+
+Inuba Documentation is your default documentation hub. You organize content into spaces, each dedicated to a project or product. Features include real-time collaboration, version control, search, and custom theming with colors like `#3B82F6`.
+
+You access powerful MDX components to enrich pages, such as interactive tabs, steps, and code examples. This ensures your documentation remains engaging and easy to maintain.
+
+## Key Features and Benefits
+
+Inuba Documentation offers tools that streamline your workflow.
+
+<Columns cols={3}>
+  <Card title="MDX Components" icon="code" href="/docs/components">
+    Use components like `<Steps>`, `<Tabs>`, and `<CodeGroup>` to create interactive docs.
+  </Card>
+  <Card title="Collaboration" icon="users" href="/docs/collaboration">
+    Invite team members and edit docs in real-time with conflict resolution.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="/docs/navigation">
+    Full-text search and sidebar navigation help users find content quickly.
+  </Card>
+</Columns>
+
+| Feature | Benefit |
+|---------|---------|
+| Custom Spaces | Organize docs per project without clutter |
+| Version History | Track changes and revert easily |
+| Export Options | Download as PDF, HTML, or Markdown |
+
+## Quick Start
+
+Follow these steps to set up your first documentation space.
+
+<Steps>
+  <Step title="Create a Space" icon="plus">
+    Log in to your Inuba account and click "New Space". Enter a name like "My Project Docs".
+  </Step>
+  <Step title="Add Content" icon="edit">
+    Create a new page using the MDX editor. Start with frontmatter for metadata.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Preview changes, then publish. Share the public URL with your team.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Example: Fetch space data
+const response = await fetch('https://api.inuba.com/spaces/{spaceId}', {
+  headers: { Authorization: `Bearer {API_KEY}` }
+});
+const spaces = await response.json();
+```
+```python
+# Example: Fetch space data
+import requests
+response = requests.get(
+  'https://api.inuba.com/spaces/{spaceId}',
+  headers={'Authorization': 'Bearer {API_KEY}'}
+)
+spaces = response.json()
+```
+</CodeGroup>
+
+## Navigating This Documentation
+
+Use the sidebar to jump between sections. Tabs below show navigation tips for different users.
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    Focus on API pages under `/docs/api`. Use `<ParamField>` and `<Request>` components for reference.
+
+    ```mermaid
+    graph TD
+        A[Home] --> B[Components]
+        B --> C[API Reference]
+        C --> D[Changelog]
+    ```
+  </Tab>
+  <Tab title="Admins" icon="settings">
+    Manage spaces via `/docs/admin`. Configure themes and permissions.
+
+    <Expandable title="Advanced Permissions" default-open="false">
+      Set roles like "Editor" or "Viewer" for granular control.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Bookmark key pages and use the search bar for quick access to topics like `{components}` or `{navigation}`.
+</Callout>

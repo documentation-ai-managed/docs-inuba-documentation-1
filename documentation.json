@@ -1,0 +1,92 @@
+{
+  "name": "Inuba Documentation",
+  "initialRoute": "introduction",
+  "colors": {
+    "light": {
+      "brand": "#3B82F6"
+    },
+    "dark": {
+      "brand": "#6ca1f8"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction",
+                "icon": "home"
+              },
+              {
+                "title": "Quick Start",
+                "path": "quickstart",
+                "icon": "zap"
+              }
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "icon": "layers",
+            "pages": [
+              {
+                "title": "Managing Documents",
+                "path": "managing-documents",
+                "icon": "file-text"
+              },
+              {
+                "title": "Collaboration",
+                "path": "collaboration",
+                "icon": "users"
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "icon": "compass",
+            "pages": [
+              {
+                "title": "Configuration",
+                "path": "configuration",
+                "icon": "settings"
+              },
+              {
+                "title": "FAQ",
+                "path": "faq",
+                "icon": "help-circle"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "icon": "terminal",
+            "openapi": "openapi.yaml"
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock",
+        "pages": [
+          {
+            "title": "Release History",
+            "path": "changelog",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+}

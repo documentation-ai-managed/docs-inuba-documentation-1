@@ -1,0 +1,173 @@
+---
+title: Space Configuration
+description: Customize your documentation space with branding, themes, and advanced settings.
+---
+
+## Overview
+
+Configure your Inuba Documentation space to match your brand and improve user experience. Adjust colors, themes, navigation, and integrations directly from the space settings. Use the configuration panel to apply changes instantly.
+
+<Columns cols={3}>
+  <Card title="Branding" icon="palette" href="#branding">
+    Set custom colors and logos.
+  </Card>
+  <Card title="Navigation" icon="menu" href="#navigation">
+    Customize sidebar and menus.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Enable exports and APIs.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Save changes after each section to preview updates in real-time.
+</Callout>
+
+## Branding and Themes
+
+Tailor your documentation's appearance with custom branding.
+
+### Set Brand Colors
+
+Update your primary color to `#3B82F6` or any hex value.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to Space Settings > Branding.
+  </Step>
+  <Step title="Enter Color" icon="palette">
+    Input your hex code in the Primary Color field.
+  </Step>
+  <Step title="Apply Theme" icon="save">
+    Select Light, Dark, or Auto theme.
+  </Step>
+</Steps>
+
+Configure themes via the `inuba.config.json` file:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "mode": "auto"
+    },
+    "branding": {
+      "logo": "/assets/logo.svg",
+      "favicon": "/assets/favicon.ico"
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    primaryColor: "#3B82F6"
+    mode: auto
+  branding:
+    logo: /assets/logo.svg
+    favicon: /assets/favicon.ico
+  ```
+</CodeGroup>
+
+<Tabs>
+  <Tab title="Light Theme" icon="sun">
+    Ideal for daytime reading with high contrast.
+  </Tab>
+  <Tab title="Dark Theme" icon="moon">
+    Reduces eye strain in low-light environments.
+  </Tab>
+  <Tab title="Auto" icon="monitor">
+    Switches based on user system preferences.
+  </Tab>
+</Tabs>
+
+## Navigation and Sidebar Setup
+
+Customize navigation to organize content effectively.
+
+Define sidebar items in your config:
+
+```json
+{
+  "navigation": {
+    "sidebar": [
+      {
+        "title": "Getting Started",
+        "href": "/docs/intro"
+      },
+      {
+        "title": "API Reference",
+        "href": "/docs/api",
+        "children": [
+          { "title": "Endpoints", "href": "/docs/api/endpoints" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `sidebar` | Array of navigation items | `[]` |
+| `topNav` | Top navigation bar items | `false` |
+| `collapsible` | Enable collapsible sections | `true` |
+
+<Expandable title="Advanced Navigation" default-open="false">
+
+Use nested children for multi-level menus:
+
+```javascript
+const navItems = {
+  children: [
+    { title: "Advanced", href: "/advanced" }
+  ]
+};
+```
+
+</Expandable>
+
+## Export and Integration Options
+
+Export your documentation or integrate with external tools.
+
+<Callout kind="info">
+  Exports include Markdown, PDF, and static HTML formats.
+</Callout>
+
+### Quick Export Steps
+
+<Steps>
+  <Step title="Select Format" icon="download">
+    Choose Markdown or HTML from Export menu.
+  </Step>
+  <Step title="Configure" icon="settings">
+    Set include/exclude patterns.
+  </Step>
+  <Step title="Generate" icon="check-circle">
+    Download the archive.
+  </Step>
+</Steps>
+
+Integrate with GitHub for version control:
+
+<CodeGroup tabs="GitHub,Netlify">
+  ```yaml
+  # .github/workflows/deploy.yml
+  name: Deploy Docs
+  on: [push]
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - run: npx inuba export
+  ```
+  ```yaml
+  # netlify.toml
+  [build]
+    command = "npx inuba build"
+    publish = "dist"
+  ```
+</CodeGroup>
+
+Enable API integrations by adding keys in Space Settings > Integrations. Use `{INUBA_API_KEY}` in your scripts, wrapped securely.

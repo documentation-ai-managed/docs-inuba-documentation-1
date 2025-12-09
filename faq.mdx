@@ -1,0 +1,141 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using Inuba Documentation.
+---
+
+## Overview
+
+Inuba Documentation helps you organize and manage project docs efficiently. Use this FAQ to resolve common issues quickly.
+
+<Callout kind="info">
+  Check your internet connection and browser console (`F12`) for errors before troubleshooting.
+</Callout>
+
+## Quick Access
+
+<Columns cols={3}>
+  <Card title="Account Management" icon="user" href="#account-management">
+    Manage your profile and permissions.
+  </Card>
+  <Card title="Troubleshooting" icon="alert-triangle" href="#troubleshooting">
+    Fix login, loading, and sync issues.
+  </Card>
+  <Card title="Best Practices" icon="book-open" href="#best-practices">
+    Organize docs for maximum impact.
+  </Card>
+</Columns>
+
+## Account Management
+
+<ExpandableGroup>
+  <Expandable title="How do you create a new account?" default-open="true">
+
+    Visit the [Inuba sign-up page](https://inuba.com/signup) and provide your email, password, and team name. Verify your email within 5 minutes to activate.
+
+  </Expandable>
+
+  <Expandable title="What if you forget your password?">
+
+    Click "Forgot Password?" on the login screen. Enter your email to receive a reset link valid for 1 hour. Use a strong password with at least 12 characters.
+
+  </Expandable>
+
+  <Expandable title="How do you update billing information?">
+
+    Navigate to Account Settings > Billing. Add your payment method and select a plan. Changes take effect immediately.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Troubleshooting Common Issues
+
+<ExpandableGroup>
+  <Expandable title="Login fails with invalid credentials">
+
+    Clear browser cache and cookies. Ensure you use the correct email case. If two-factor authentication (2FA) is enabled, check your authenticator app.
+
+    <Steps>
+      <Step title="Disable VPN" icon="shield-off">
+        Temporarily turn off any VPN or proxy.
+      </Step>
+      <Step title="Try Incognito Mode" icon="incognito">
+        Open an incognito window and log in.
+      </Step>
+      <Step title="Contact Support" icon="mail">
+        Email support@inuba.com with your account details.
+      </Step>
+    </Steps>
+
+  </Expandable>
+
+  <Expandable title="Pages not loading or syncing">
+
+    <Tabs>
+      <Tab title="Browser" icon="globe">
+        Refresh the page (`Ctrl+R` or `Cmd+R`). Check for JavaScript errors in dev tools.
+      </Tab>
+      <Tab title="CLI Tool" icon="terminal">
+        ```bash
+        inuba sync --force
+        ```
+        This forces a full resync.
+      </Tab>
+    </Tabs>
+
+    <Callout kind="tip">
+      Sync issues often resolve with `inuba logout` followed by `inuba login`.
+    </Callout>
+
+  </Expandable>
+</ExpandableGroup>
+
+## Best Practices for Documentation
+
+Follow these guidelines to create effective docs.
+
+| Practice | Description | Benefit |
+|----------|-------------|---------|
+| Use Components | Integrate `<Callout>`, `<Steps>`, and `<Tabs>` for rich content. | Improves readability and engagement. |
+| Version Control | Enable Git integration in project settings. | Tracks changes and enables rollbacks. |
+| Consistent Structure | Start pages with frontmatter, use H2 headings, and end with CTAs. | Enhances navigation and SEO. |
+
+<ExpandableGroup>
+  <Expandable title="How do you organize large docs?">
+
+    Create a clear hierarchy: Use H2 for sections, H3 for subsections. Group related pages in folders.
+
+    ```mermaid
+    graph TD
+        A[Root] --> B[Guides]
+        A --> C[API Reference]
+        A --> D[FAQ]
+        B --> E[Quickstart]
+        B --> F[Troubleshooting]
+    ```
+
+  </Expandable>
+
+  <Expandable title="What's the best way to add code examples?">
+
+    Use `<CodeGroup>` for multi-language support.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      const client = new InubaClient({ apiKey: 'your-key' });
+      const docs = await client.getDocs();
+      console.log(docs);
+      ```
+      ```python
+      from inuba import Client
+      client = Client(api_key="your-key")
+      docs = client.get_docs()
+      print(docs)
+      ```
+    </CodeGroup>
+
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="success">
+  Need more help? Join our Discord community or email support@inuba.com.
+</Callout>

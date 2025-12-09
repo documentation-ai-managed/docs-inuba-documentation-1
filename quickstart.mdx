@@ -1,0 +1,99 @@
+---
+title: Quickstart Guide
+description: Get started with Inuba Documentation by setting up your account and creating your first documentation space.
+---
+
+## Get Started in Minutes
+
+Set up your Inuba Documentation account and launch your first space quickly. Follow these steps to register, create a space, and add your initial document. You complete the process in under five minutes.
+
+<Callout kind="tip">
+  Use a GitHub account for seamless integration with repositories later.
+</Callout>
+
+## Sign Up for an Account
+
+Choose your preferred method to create an account.
+
+<Tabs>
+  <Tab title="Email" icon="mail">
+    Visit `https://app.inuba.com/signup` and enter your email address, password, and display name. Verify your email to activate the account.
+  </Tab>
+  <Tab title="GitHub" icon="github">
+    Click the GitHub button on the signup page. Authorize Inuba to access your public repositories for future docs syncing.
+  </Tab>
+  <Tab title="Google" icon="google">
+    Select the Google option and sign in with your Google account. No additional verification required.
+  </Tab>
+</Tabs>
+
+## Complete the Quickstart Workflow
+
+Follow these sequential steps to build your first documentation space.
+
+<Steps>
+  <Step title="Create a New Space" icon="plus">
+    From the dashboard, click **New Space**. Enter a name like `My Project Docs` and select a starter template such as "API Reference" or "Product Guide". Click **Create**.
+
+    <Image
+      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&fit=crop"
+      alt="Creating a new documentation space in Inuba"
+      width="800"
+      height="450"
+    />
+  </Step>
+
+  <Step title="Configure Space Settings" icon="settings">
+    In your new space, go to **Settings > General**. Set the space slug to `my-project-docs` and brand color to `#3B82F6`. Save changes.
+  </Step>
+
+  <Step title="Add Your First Document" icon="file-text">
+    Navigate to **Documents > New Document**. Name it `quickstart.mdx` and paste the following MDX content.
+
+    <CodeGroup tabs="MDX">
+      ```mdx
+      ---
+      title: Welcome
+      description: Your first document.
+      ---
+
+      ## Hello World
+
+      This is your Inuba documentation space.
+      ```
+    </CodeGroup>
+
+    Preview and publish the document.
+  </Step>
+</Steps>
+
+## What's Next?
+
+Explore these key features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Invite Collaborators" icon="users" href="/docs/collaboration">
+    Add team members with editor or viewer roles.
+  </Card>
+  <Card title="Connect GitHub" icon="github" href="/docs/git-integration">
+    Sync docs directly from your repository.
+  </Card>
+  <Card title="Customize Theme" icon="palette" href="/docs/themes">
+    Apply custom styles and branding.
+  </Card>
+</Columns>
+
+## Troubleshooting Common Issues
+
+<ExpandableGroup>
+  <Expandable title="Space creation fails">
+    Check your internet connection and ensure your account is verified. Contact support@inuba.com if the issue persists.
+  </Expandable>
+  <Expandable title="Document preview errors">
+    Validate your MDX syntax. Common issues include unescaped `{` or `}` characters—always wrap them in backticks like `{variable}`.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="success">
+  Congratulations! Your first documentation space is live. Share the URL with your team.
+</Callout>

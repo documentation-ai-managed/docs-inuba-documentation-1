@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: Track updates, new features, and improvements in Inuba Documentation.
+---
+
+## Recent Releases
+
+Stay updated with the latest enhancements in Inuba Documentation. You access new features by updating your instance. Review the changes below to understand improvements and plan your upgrades.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1-2-0">
+    Enhanced parsing and new components.
+  </Card>
+  <Card title="v1.1.0" icon="package" href="#v1-1-0">
+    Performance boosts and bug fixes.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1-0-0">
+    Initial stable release.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Check your current version in the admin dashboard. Upgrade via the CLI for the latest features.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]} id="v1-2-0">
+
+## New Features
+
+- Added `<Steps>` and `<Tabs>` components for better tutorials and platform guides
+- Introduced `<Columns>` for responsive card layouts
+- Support for Mermaid diagrams via code blocks (no JSX component needed)
+
+## Improvements
+
+- Faster MDX parsing with stricter escaping rules for `{` and `<` characters
+- Better error messages for common syntax issues like unquoted attributes
+
+## Bug Fixes
+
+- Fixed nested code block rendering (now uses 4 backticks correctly)
+- Resolved heading hierarchy warnings
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "improvement"]} id="v1-1-0">
+
+## New Features
+
+- `<CodeGroup>` now supports custom tab labels like "TypeScript,Python"
+- `<ParamField>` and `<ResponseField>` for API documentation
+
+## Improvements
+
+- Optimized image loading with required `width` and `height` attributes
+- Enhanced accessibility with `alt` text enforcement
+
+## Bug Fixes
+
+- Corrected self-closing component validation
+- Fixed blank line requirements inside JSX elements
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]} id="v1-0-0">
+
+## New Features
+
+- Core `<Callout>`, `<Card>`, and `<Request>` components
+- YAML frontmatter validation with no blank lines allowed
+- Lucide icon integration (e.g., `icon="zap"`)
+
+## Breaking Changes
+
+- Removed support for H1 headings; always start with H2
+- Enforced double quotes for all string attributes
+
+## Bug Fixes
+
+- Initial parsing error prevention rules implemented
+
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to upgrade Inuba Documentation to the latest version.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Create a full backup of your documentation repository.
+  </Step>
+  <Step title="Update Package" icon="package">
+    <Tabs>
+      <Tab title="npm" icon="npm">
+        ```bash
+        npm install inuba-docs@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+        ```bash
+        yarn add inuba-docs@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Rebuild and Deploy" icon="rocket">
+    Run your build command and redeploy.
+  </Step>
+</Steps>
+
+## Example: New Feature Usage
+
+See how the updated `<CodeGroup>` works with realistic examples.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Fetch user data
+  const response = await fetch('/api/users/123', {
+    headers: { 'Authorization': `Bearer {API_KEY}` }
+  });
+  const user = await response.json();
+  console.log(user.name);
+  ```
+  ```python
+  # Fetch user data
+  import requests
+  headers = {'Authorization': f'Bearer {API_KEY}'}
+  response = requests.get('/api/users/123', headers=headers)
+  user = response.json()
+  print(user['name'])
+  ```
+</CodeGroup>
+
+<Expandable title="Migration Notes" default-open="false">
+  If you encounter parsing errors with `{` or `<` in prose, wrap them in backticks like `{variable}` or `<100ms`. Review the [Update] components above for version-specific changes.
+</Expandable>
